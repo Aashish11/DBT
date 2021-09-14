@@ -7,4 +7,4 @@ Select
   , amount/100.00 as amount
   , created as created_at
 From
-    raw.stripe.payment
+    {{ source('stripe', 'payment') }}
