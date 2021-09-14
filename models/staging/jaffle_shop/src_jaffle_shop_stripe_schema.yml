@@ -1,0 +1,28 @@
+version: 2
+
+sources:
+    - name: jaffle_shop
+      description: A clone of a Snowflake flat file.
+      database: raw
+      tables:
+        - name: customers
+          description: Raw customers data.
+          columns:
+            - name: id
+              description: Primary key for customers.
+              tests:
+                - unique
+                - not null
+        - name: orders
+          description: Raw orders data.
+          columns:
+            - name: id
+              description: Primary key for orders.
+              tests:
+                - unique
+                - not null
+
+    - name: stripe
+      database: raw
+      tables:
+        - name: payment
